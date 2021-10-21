@@ -33,6 +33,11 @@
 .q1__form > .resultado {
     color: var(--cinza700);
     margin: 10px 0px;
+    min-height: 20px;
+}
+
+.q1__form > .resultado > .msg__error{
+    color: red;
 }
 
 .q1__form  > button {
@@ -45,3 +50,4 @@
     color: #FFF;
     background-color: var(--azul);
 }
+
