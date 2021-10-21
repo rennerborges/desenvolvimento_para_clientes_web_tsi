@@ -77,10 +77,11 @@
 }
 
 .q2__form > h2 {
-    color: var(--cinza700);
+    color: var(--cinza400);
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2rem;
+
 }
 
 .q2__form input {
@@ -102,7 +103,8 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    align: center;
+    align-items: center;
+    padding: 0px 50px;
 }
 
 #questão2 > div > h1{
