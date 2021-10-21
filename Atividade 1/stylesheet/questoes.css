@@ -1,6 +1,6 @@
 
 /* Questão 1 */
- 
+
 #questão1 {
     background: linear-gradient(rgba(0, 0, 0,0.1) 35%,rgba(0, 0, 0, 0.9)), url('../images/backgrounds/calculo.jpg');
     background-position: center;
@@ -51,3 +51,68 @@
     background-color: var(--azul);
 }
 
+/* Questão 2 */
+
+#questão2 {
+    background-image: linear-gradient(145deg, #0098ba 0, #0098c9 4.55%, #0097d7 9.09%, #0095e4 13.64%, #0094ef 18.18%, #0091f7 22.73%, #008efe 27.27%, #008aff 31.82%, #0085ff 36.36%, #0080ff 40.91%, #0079ff 45.45%, #4672f9 50%, #726af1 54.55%, #9061e7 59.09%, #a857db 63.64%, #bb4ccd 68.18%, #cb41be 72.73%, #d835ae 77.27%, #e12a9e 81.82%, #e8208d 86.36%, #ed1b7c 90.91%, #ef1c6b 95.45%, #ee235a 100%);
+    display: flex;
+    align-items: center;
+}
+
+.q2__form {
+    background-color: #fff;
+    width: 35vw;
+    min-width: 580px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px;
+}
+
+.q2__form > h1 {
+    color: var(--cinza500);
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.q2__form > h2 {
+    color: var(--cinza700);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.q2__form input {
+    height: 60px;
+}
+
+.q2__form  > button {
+    height: 60px;
+    color: #FFF;
+    background-image: linear-gradient(145deg, #0098ba 0, #0098c9 4.55%, #0097d7 9.09%, #0095e4 13.64%, #0094ef 18.18%, #0091f7 22.73%, #008efe 27.27%, #008aff 31.82%, #0085ff 36.36%, #0080ff 40.91%, #0079ff 45.45%, #4672f9 50%, #726af1 54.55%, #9061e7 59.09%, #a857db 63.64%, #bb4ccd 68.18%, #cb41be 72.73%, #d835ae 77.27%, #e12a9e 81.82%, #e8208d 86.36%, #ed1b7c 90.91%, #ef1c6b 95.45%, #ee235a 100%);
+    transition: background-image 0.5s ease-in-out;
+}
+
+.q2__form  > button:hover {
+    background-image: linear-gradient(285deg, #4672f9 0, #4672f9 50%, #4672f9 100%);
+}
+
+#questão2 > div{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align: center;
+}
+
+#questão2 > div > h1{
+    font-size: 5rem;
+    color: #FFF;
+}
+
+#questão2 .error_message {
+    color: red;
+    text-align: center;
+    margin: 15px 0px;
+    min-height: 20px;
+}
