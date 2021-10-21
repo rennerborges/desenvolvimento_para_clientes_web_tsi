@@ -1,36 +1,3 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-section {
-    width: 100%;
-    height: 100vh;
-}
-
-label {
-    position: relative;
-    display: block;
-    margin-top: 10px;
-    width: 100%;
-}
-
-label > span {
-    font-size: 0.8rem;
-    position: absolute;
-    top: -7px;
-    left: 10px;
-    background-color: #FFF;
-    padding: 0px 5px;
-}
-
-label > input {
-    height: 45px;
-    padding: 10px;
-    width: 100%;
-    border-radius: 4px;
-}
 
 /* Questão 1 */
  
@@ -54,4 +21,27 @@ label > input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.q1__form > h1{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--cinza700);
+}
+
+.q1__form > .resultado {
+    color: var(--cinza700);
+    margin: 10px 0px;
+}
+
+.q1__form  > button {
+    color: var(--azul);
+    border: 1px solid var(--azul);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.q1__form  > button:hover {
+    color: #FFF;
+    background-color: var(--azul);
 }

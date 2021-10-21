@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvimento para clientes web</title>
 
-    <link rel="stylesheet" href="./stylesheet/index.css">
+    <link rel="stylesheet" href="./stylesheet/general.css">
+    <link rel="stylesheet" href="./stylesheet/questoes.css">
 </head>
 <body>
     <section id="questão1">
         <form class="q1__form">
-            <h1>Calcular de fatorial</h1>
-            <label>
+            <h1>!Calculadora de fatorial</h1>
+            <label class="label__primary">
                 <span>Número</span>
                 <input type="number" placeholder="Ex.: 10" min="0">
             </label>
-            <p>O resultado é 530</p>
+            <p class="resultado">O fatorial de 50 é <b>530</b></p>
             <button>Calcular</button>
         </form>
     </section>
+
+    <script src="./javascript/input.js"></script>
 </body>
 </html>
