@@ -93,12 +93,14 @@ function FactoryQuestion3(){
             const imc = calculeImc(peso.value, altura.value);
             const classificacao = classifyImc(imc);
 
-            console.log(title);
-            console.log(content);
+            if(!peso.value || !altura.value) {
+                throw new Error('É necessário informar todos os campos');
+            }
+
             title.innerHTML = `${classificacao.title}!!!`
             content.innerHTML = `Seu IMC é ${imc.toFixed(2)} sua classificação é <b>${classificacao.content}</b>.`
         } catch (error) {
-            
+            errorMsg.innerHTML = error.message;
         }
     })
 }

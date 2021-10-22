@@ -193,6 +193,12 @@
     background: radial-gradient(circle at 50% -20.71%, #d944ff 0, #ac2af6 25%, #7300e6 50%, #0000d6 75%, #0000ca 100%);
 }
 
+#questão3 form .error_message {
+    color: red;
+    min-height: 20px;
+}
+
+
 #questão3 .content__info {
     color: #FFF;
     width: 100%;
