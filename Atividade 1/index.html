@@ -15,7 +15,7 @@
             <h1>!Calculadora de fatorial</h1>
             <label class="label__primary">
                 <span>Número</span>
-                <input type="number" placeholder="Ex.: 10" min="0">
+                <input type="number" required placeholder="Ex.: 10" min="0">
             </label>
             <p class="resultado"> </p>
             <button>Calcular</button>
@@ -28,13 +28,41 @@
             <h2>Suas datas em extenso</h2>
             <label class="label__primary">
                 <span>Data</span>
-                <input type="date" placeholder="Ex.: 23/10/2001">
+                <input type="date" required placeholder="Ex.: 23/10/2001">
             </label>
             <p class="error_message"> </p>
             <button>Transformar</button>
         </form>
         <div>
             <h1 class="resultado">Informe a data <br> para começar a diversão</h1>
+        </div>
+    </section>
+
+    <section id="questão3">
+        <form>
+            <h1>IMC</h1>
+
+            <h2>Informe os dados para classificarmos</h2>
+
+            <label class="label__primary">
+                <span>Peso(Kg)</span>
+                <input type="number" name="peso" required placeholder="Ex.: 75">
+            </label>
+
+            <label class="label__primary">
+                <span>Altura(M)</span>
+                <input type="number" name="altura" step=".01" required placeholder="Ex.: 1.85">
+            </label>
+
+            <p class="error_message"> </p>
+            <button>Calcular</button>
+        </form>
+
+        <div class="content__info">
+            <div>
+                <h1>Parabéns!!!</h1>
+                <h2>Seu IMC é 25.2 sua classificação é <b>peso ideal</b>.</h2>
+            </div>
         </div>
     </section>
 
