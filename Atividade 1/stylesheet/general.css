@@ -18,6 +18,9 @@
     --azulHover: #0C62AD;
     --azulActive: #004C8F;
 
+	--shadow: 0px 5px 26px -5px rgba(107, 129, 148, 0.2);
+
+
   }
 
 ::-webkit-scrollbar {

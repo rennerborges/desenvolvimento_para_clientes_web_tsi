@@ -2,6 +2,7 @@ window.addEventListener('load', ()=> {
     FactoryQuestion1();
     FactoryQuestion2();
     FactoryQuestion3();
+    FactoryQuestion4();
 })
 
 function FactoryQuestion1(){
@@ -150,4 +151,61 @@ function classifyImc(imc){
         }
     }
 
+}
+
+function FactoryQuestion4(){
+    const form = document.querySelector('#questão4 > form');
+    const input = document.querySelector('#questão4 > form input');
+    const containerNotas = document.querySelector('#questão4 .container__notasItem');
+    const htmlValue = document.querySelector('#questão4 .card__total b');
+    const resultado =  document.querySelector('#questão4 .resultado');
+
+    form.addEventListener('submit', (event)=> {
+        event.preventDefault();
+
+        const valueInput = parseFloat(input.value);
+        const values = getMoneyFractioned(valueInput);
+        const containerItens = Object.entries(values).reverse().map(([nota, quantidade])=>(generateNotasItem(nota, quantidade)));
+
+        containerNotas.innerHTML = containerItens;
+        htmlValue.innerHTML = valueInput.toLocaleString('pt-br', {minimumFractionDigits: 2});
+        window.teste = valueInput.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+        if(resultado.style.display !== 'block'){
+            resultado.style.display = 'block';
+        }
+    });
+
+}
+
+function getMoneyFractioned(value){
+    const notas = {
+        "50": 0,
+        "10":0,
+        "5":0,
+        "1": 0,
+    }
+
+    let valueRestante = value;
+
+    for(const nota of Object.keys(notas).reverse()){
+        if(valueRestante === 0){
+            break;
+        }
+
+        notas[nota] += Math.floor(valueRestante / nota);
+        valueRestante = valueRestante % nota;
+    }
+
+    return notas;
+}
+
+function generateNotasItem(nota, quantidade){
+    return (`
+    <div class="nota__item">
+        <h2>${nota} ${nota == 1 ? 'real': 'reais'}</h2>
+        <h3>Quantidade:</h3>
+        <p>${quantidade}x</p>
+    </div>
+    `);
 }

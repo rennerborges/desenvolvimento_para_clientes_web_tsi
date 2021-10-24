@@ -224,3 +224,174 @@
     font-weight: 500;
 }
 
+/* Questão 4 */
+
+#questão4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 0px 100px;
+    /* background-image: linear-gradient(135deg, #ff725f 0, #ff5a5b 25%, #ff3855 50%, #ef0050 75%, #e2004f 100%); */
+}
+
+#questão4 > .content_title {
+    width: 60vw;
+    max-width: 800px;
+}
+
+#questão4 > .content_title img {
+    width: 100%;
+}
+
+#questão4 > form {
+    /* flex: 1; */
+    width: 37vw;
+    max-width: 800px;
+    height: 100%;
+    background-image: linear-gradient(135deg, #ff725f 0, #ff5a5b 25%, #ff3855 50%, #ef0050 75%, #e2004f 100%);
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+#questão4 > form > .footer {
+    width: 100%;
+    height: 230px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url(../images/backgrounds/troco.png);
+    background-position: bottom right;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#questão4 > form > .footer > span {
+    font-size: 2rem;
+    font-weight: 700;
+    transform: translate(-36px,-26px);
+    background: linear-gradient(135deg, #ff725f 0, #ff5a5b 25%, #ff3855 50%, #ef0050 75%, #e2004f 100%);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+#questão4 > form  > h1 {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+#questão4 > form  > h2 {
+    color: var(--cinza400);
+    color: #FFF;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+#questão4 > form input {
+    border-radius: 20px;
+    height: 60px;
+    padding: 20px 30px;
+    border: none;
+}
+
+#questão4 > form input:focus {
+    outline: none;
+}
+
+#questão4 > form button {
+    border-radius: 20px;
+    height: 60px;
+    color: #FFF;
+    border: 1px solid #FFF;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.4s ease-in-out;
+}
+
+#questão4 > form button:hover{
+    background-color: #FFF;
+}
+
+#questão4 > form button:hover span{
+    background: linear-gradient(135deg, #ff725f 0, #ff5a5b 25%, #ff3855 50%, #ef0050 75%, #e2004f 100%);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#questão4 .card__total{
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    margin: 15px 10px;
+    box-shadow: var(--shadow);
+}
+
+#questão4 .card__total h2 {
+    color: var(--cinza700);
+}
+
+#questão4 .card__total h3 {
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--cinza500);
+}
+
+#questão4 .nota__item {
+    width: fit-content;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 25px  10px;
+    margin: 10px;
+    box-shadow: var(--shadow);
+}
+
+#questão4 .container__notasItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#questão4 .nota__item {
+    width: fit-content;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 25px  10px;
+    margin: 10px;
+    box-shadow: var(--shadow);
+}
+#questão4 .resultado {
+    margin-top: 50px;
+    display: none;
+}
+
+#questão4 .resultado > h2 {
+    color: #FFF;
+    margin-bottom: 15px;
+}
+
+#questão4 .nota__item h2 {
+    color: var(--cinza700);
+    margin-bottom: 10px;
+}
+
+#questão4 .nota__item h3 {
+    color: var(--cinza500);
+    font-weight: 400;
+}
+
+#questão4 .nota__item p {
+    color: var(--cinza500);
+    font-weight: 700;
+}
