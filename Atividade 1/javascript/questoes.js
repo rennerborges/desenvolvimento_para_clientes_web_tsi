@@ -119,22 +119,22 @@ function classifyImc(imc){
             content: 'abaixo do peso',
         },
         'peso_ideal': {
-            condition: (imc)=> imc >= 18.6 && imc <= 24.9,
+            condition: (imc)=> imc >= 18.6 && imc < 25,
             title: 'Parabéns',
             content: 'peso ideal',
         },
         'acima_do_peso': {
-            condition: (imc)=> imc >= 25 && imc <= 29.9,
+            condition: (imc)=> imc >= 25 && imc < 30,
             title: 'Cuidado',
             content: 'levemente acima do peso',
         },
         'obesidade1': {
-            condition: (imc)=> imc >= 30 && imc <= 34.9,
+            condition: (imc)=> imc >= 30 && imc < 35,
             title: 'Atenção',
             content: 'obesidade grau I',
         },
         'obesidade2': {
-            condition: (imc)=> imc >= 35 && imc <= 39.9,
+            condition: (imc)=> imc >= 35 && imc < 40,
             title: 'Atenção',
             content: 'obesidade grau II',
         },
@@ -167,9 +167,8 @@ function FactoryQuestion4(){
         const values = getMoneyFractioned(valueInput);
         const containerItens = Object.entries(values).reverse().map(([nota, quantidade])=>(generateNotasItem(nota, quantidade)));
 
-        containerNotas.innerHTML = containerItens;
+        containerNotas.innerHTML = containerItens.join('');
         htmlValue.innerHTML = valueInput.toLocaleString('pt-br', {minimumFractionDigits: 2});
-        window.teste = valueInput.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
         if(resultado.style.display !== 'block'){
             resultado.style.display = 'block';
