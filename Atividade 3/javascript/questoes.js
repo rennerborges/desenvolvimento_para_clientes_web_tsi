@@ -54,6 +54,22 @@ function buttonAction(event){
         3: {
             title: 'Lista de alunos com maior nota',
             function: getMaiorNota,
+        },
+        4: {
+            title: 'Média das notas dos alunos',
+            function: getMediaNota,
+        },
+        5: {
+            title: 'Lista de alunos aprovados',
+            function: ()=> getAlunosByStatus('aprovado'),
+        },
+        6: {
+            title: 'Lista de alunos reprovados',
+            function: ()=> getAlunosByStatus('reprovado'),
+        },
+        7: {
+            title: 'Removendo alunos',
+            function: clearAlunos
         }
     }
 
@@ -116,6 +132,7 @@ function orderByAttribute(array, attribute, order){
 function generateAlunoItem(itens){
     return itens.map(item => {
         const tag = item.nota >= 6 ? '<div class="tag aprovado">Aprovado</div>' : '<div class="tag reprovado">Reprovado</div>';
+
         return (`
             <div class="aluno__item">
                 <div class="line">
@@ -141,4 +158,49 @@ function getMaiorNota(){
     const alunosNotaMaior = alunos.filter(aluno => aluno.nota === alunoNotaMaior.nota);
 
     containerAlunos.innerHTML = generateAlunoItem(alunosNotaMaior);
+}
+
+function getMediaNota(){
+    const containerAlunos = document.querySelector('.containerAlunos');
+    const alunos = JSON.parse(window.localStorage.getItem('alunos'));
+
+    const somaNotas = alunos.reduce((sum, aluno)=> sum + aluno.nota, 0);
+
+    const media = somaNotas/alunos.length;
+
+    containerAlunos.innerHTML =  `
+        <div class="aluno__item">
+            <div class="line">
+                <p>Média</p>
+            </div>
+            <div class="line">
+                <p class="label">Valor:</p>
+                <p>${media.toFixed(2)}</p>
+            </div>
+        </div>
+    `
+}
+
+function getAlunosByStatus(status){
+
+    const conditionStatus = {
+        'aprovado': (nota) => nota >= 6,
+        'reprovado': (nota) => nota < 6,
+    }
+
+    const containerAlunos = document.querySelector('.containerAlunos');
+    const alunos = JSON.parse(window.localStorage.getItem('alunos'));
+
+    const alunosNotaMaior = alunos.filter(aluno => conditionStatus[status](aluno.nota));
+
+    containerAlunos.innerHTML = generateAlunoItem(alunosNotaMaior);
+}
+
+function clearAlunos(){
+
+    window.localStorage.removeItem('alunos');
+
+    handleChangeCard();
+    handleChangeMenu();
+    
 }
