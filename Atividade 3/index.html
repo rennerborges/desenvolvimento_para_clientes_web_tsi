@@ -18,11 +18,11 @@
                 <h2>Informe as notas dos alunos</h2>
                 <label class="label__primary">
                     <span>Nome:</span>
-                    <input type="text" required placeholder="Ex.: João Silva">
+                    <input type="text" name="nome" required placeholder="Ex.: João Silva">
                 </label>
                 <label class="label__primary">
                     <span>Nota:</span>
-                    <input type="number" step=".01" required placeholder="Ex.: 5.6">
+                    <input type="number" name="nota" step=".01" required placeholder="Ex.: 5.6">
                 </label>
                 <p class="error_message"> </p>
                 <button>Salvar</button>
@@ -59,7 +59,11 @@
                         <span class="btn__index">5</span>
                         <span class="btn__description">Alunos aprovados</span>
                     </button>
-    
+
+                    <button class="btn__vertical">
+                        <span class="btn__index">6</span>
+                        <span class="btn__description">Limpar dados</span>
+                    </button>
                 </div>
             </div>
         </div>

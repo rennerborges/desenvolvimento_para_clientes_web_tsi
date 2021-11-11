@@ -84,7 +84,6 @@ section > .content__right{
 section > .content__right > h1{
     font-size: 4rem;
     color: #FFF;
-    display: none;
 }
 
 section .error_message {
@@ -166,6 +165,7 @@ section .error_message {
     padding: 50px;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 .card h1 {

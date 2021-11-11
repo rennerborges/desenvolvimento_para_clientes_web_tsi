@@ -1,5 +1,5 @@
 window.addEventListener('load', ()=> {
-    prepareMenu();
+    InitEvents();
 })
 
 function handleChangeMenu(){
@@ -15,7 +15,130 @@ function handleChangeMenu(){
     }
 }
 
-function prepareMenu(){
+function handleChangeCard(preserve){
+    const card = document.querySelector('.card');
+    const text = document.querySelector('section > .content__right > h1');
+
+    if(card.style.display !== 'block' || preserve){
+        card.style.display = 'block';
+        text.style.display = 'none';
+    }else{
+        card.style.display = 'none';
+        text.style.display = 'block';
+    }
+}
+
+function InitEvents(){
     document.querySelector('.icon').addEventListener('click', handleChangeMenu);
     document.querySelector('.btn__action').addEventListener('click', handleChangeMenu);
+    document.querySelector('form').addEventListener('submit', submitAluno);
+
+    document.querySelectorAll('.btn__vertical').forEach((button)=>{
+        button.addEventListener('click', buttonAction);
+    });
+}
+
+function buttonAction(event){
+    const indexButton = this.querySelector('.btn__index').innerHTML;
+    const title = document.querySelector('.card h1');
+
+    const controllerButtons = {
+        1: {
+            title: 'Lista dos alunos em ordem alfabética',
+            function: ()=> getAlunosOrder('asc','nome'),
+        },
+        2: {
+            title: 'Lista dos alunos em ordem decrescente',
+            function: ()=> getAlunosOrder('desc','nota'),
+        },
+        3: {
+            title: 'Lista de alunos com maior nota',
+            function: getMaiorNota,
+        }
+    }
+
+    handleChangeCard(true);
+    const actions = controllerButtons[indexButton];
+
+    title.innerHTML = actions.title;
+    actions.function();
+
+}
+
+function submitAluno(event){
+    event.preventDefault();
+    const nome = document.querySelector('input[name="nome"]');
+    const nota = document.querySelector('input[name="nota"]');
+
+    let alunos = JSON.parse(window.localStorage.getItem('alunos'));
+
+    const aluno = {
+        nome: nome.value,
+        nota: parseInt(nota.value)
+    }
+    if(alunos){
+        alunos.push(aluno);
+    }else{
+        alunos = [aluno];
+    }
+
+    window.localStorage.setItem('alunos', JSON.stringify(alunos));
+}
+
+function getAlunosOrder(order, attribute){
+    const containerAlunos = document.querySelector('.containerAlunos');
+    const alunos = JSON.parse(window.localStorage.getItem('alunos'));
+    // TODO
+    // Fazer tratamento para quando não houver alunos
+    const alunosOrdenados = orderByAttribute(alunos, attribute, order);
+    containerAlunos.innerHTML = generateAlunoItem(alunosOrdenados);
+}
+
+function orderByAttribute(array, attribute, order){
+    let arrayOrder = array.sort((a, b) => {
+        if (a[attribute] > b[attribute]) {
+          return 1;
+        }
+        if (a[attribute] < b[attribute]) {
+          return -1;
+        }
+
+        return 0;
+    });
+
+    if(order === 'desc'){
+        arrayOrder = arrayOrder.reverse();
+    }
+
+    return arrayOrder;
+}
+
+function generateAlunoItem(itens){
+    return itens.map(item => {
+        const tag = item.nota >= 6 ? '<div class="tag aprovado">Aprovado</div>' : '<div class="tag reprovado">Reprovado</div>';
+        return (`
+            <div class="aluno__item">
+                <div class="line">
+                    <p class="label">Nome:</p>
+                    <p>${item.nome}</p>
+                </div>
+                <div class="line">
+                    <p class="label">Nota:</p>
+                    <p>${item.nota.toFixed(2)}</p>
+                </div>
+                ${tag}
+            </div>
+        `);
+    }).join('');
+}
+
+function getMaiorNota(){
+    const containerAlunos = document.querySelector('.containerAlunos');
+    const alunos = JSON.parse(window.localStorage.getItem('alunos'));
+
+    const [alunoNotaMaior] = orderByAttribute(alunos, 'nota', 'desc');
+
+    const alunosNotaMaior = alunos.filter(aluno => aluno.nota === alunoNotaMaior.nota);
+
+    containerAlunos.innerHTML = generateAlunoItem(alunosNotaMaior);
 }
