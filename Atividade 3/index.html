@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento para clientes web</title>
+
+    <link rel="stylesheet" href="./stylesheet/general.css">
+    <link rel="stylesheet" href="./stylesheet/questoes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="content__left">
+            <form>
+                <h1>Q-Acadêmico</h1>
+                <h2>Informe as notas dos alunos</h2>
+                <label class="label__primary">
+                    <span>Nome:</span>
+                    <input type="text" required placeholder="Ex.: João Silva">
+                </label>
+                <label class="label__primary">
+                    <span>Nota:</span>
+                    <input type="number" step=".01" required placeholder="Ex.: 5.6">
+                </label>
+                <p class="error_message"> </p>
+                <button>Salvar</button>
+                <button type="button" class="btn__action"><span>Ações rápidas</span></button>
+            </form>
+            <div class="container__actions">
+                <header>
+                    <i class="fas fa-arrow-left icon"></i>
+                    <h1>Ações rápidas</h1>
+                </header>
+                <div class="content__actions">
+
+                    <button class="btn__vertical">
+                        <span class="btn__index">1</span>
+                        <span class="btn__description">Alunos em ordem alfabética</span>
+                    </button>
+
+                    <button class="btn__vertical">
+                        <span class="btn__index">2</span>
+                        <span class="btn__description">Alunos em ordem decrescente</span>
+                    </button>
+
+                    <button class="btn__vertical">
+                        <span class="btn__index">3</span>
+                        <span class="btn__description">Maior nota</span>
+                    </button>
+
+                    <button class="btn__vertical">
+                        <span class="btn__index">4</span>
+                        <span class="btn__description">Média</span>
+                    </button>
+
+                    <button class="btn__vertical">
+                        <span class="btn__index">5</span>
+                        <span class="btn__description">Alunos aprovados</span>
+                    </button>
+    
+                </div>
+            </div>
+        </div>
+        <div class="content__right">
+            <h1 class="resultado">Bem vindo ao futuro!<br> Conheça o Q-Acadêmico</h1>
+
+            <div class="card">
+                <h1>Lista dos alunos em ordem alfabética</h1>
+                <div class="containerAlunos">
+                    
+                    <div class="aluno__item">
+                        <div class="line">
+                            <p class="label">Nome:</p>
+                            <p>Renner Borges Ferreira</p>
+                        </div>
+                        <div class="line">
+                            <p class="label">Nota:</p>
+                            <p>10,0</p>
+                        </div>
+                        <div class="tag aprovado">Aprovado</div>
+                    </div>
+
+                    <div class="aluno__item">
+                        <div class="line">
+                            <p class="label">Nome:</p>
+                            <p>Marcel Melo Silva</p>
+                        </div>
+                        <div class="line">
+                            <p class="label">Nota:</p>
+                            <p>3,0</p>
+                        </div>
+                        <div class="tag reprovado">Reprovado</div>
+                    </div>
+
+                    <div class="aluno__item">
+                        <div class="line">
+                            <p class="label">Nome:</p>
+                            <p>Gisele Aparecida Santos</p>
+                        </div>
+                        <div class="line">
+                            <p class="label">Nota:</p>
+                            <p>7,0</p>
+                        </div>
+                        <div class="tag aprovado">Aprovado</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./javascript/input.js"></script>
+    <script src="./javascript/questoes.js"></script>
+</body>
+</html>
