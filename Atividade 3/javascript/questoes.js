@@ -261,9 +261,13 @@ function getAlunosByStatus(status){
     const containerAlunos = document.querySelector('.containerAlunos');
     const alunos = JSON.parse(window.localStorage.getItem('alunos'));
 
-    const alunosNotaMaior = alunos.filter(aluno => conditionStatus[status](aluno.nota));
+    const alunosStatus = alunos.filter(aluno => conditionStatus[status](aluno.nota));
 
-    containerAlunos.innerHTML = generateAlunoItem(alunosNotaMaior);
+    if(!alunosStatus.length){
+        return containerAlunos.innerHTML = "<p class='notFound'>Nenhum aluno encontrado!</p>";
+    }
+
+    containerAlunos.innerHTML = generateAlunoItem(alunosStatus);
 }
 
 function clearAlunos(){

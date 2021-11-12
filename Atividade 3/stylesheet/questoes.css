@@ -226,3 +226,9 @@ section .error_message {
 .label__primary__focus input {
     outline-color: #f84e73 !important;
 }
+
+.notFound {
+    color: var(--cinza500);
+    font-size: 1.2rem;
+    margin: 0;
+}
