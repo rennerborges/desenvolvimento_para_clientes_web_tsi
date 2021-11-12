@@ -41,12 +41,22 @@ function InitEvents(){
         handleChangeMenu();
         toBackTextContent();
     });
-    document.querySelector('.btn__action').addEventListener('click', handleChangeMenu);
+    document.querySelector('.btn__action').addEventListener('click', quickActionClick);
     document.querySelector('form').addEventListener('submit', submitAluno);
 
     document.querySelectorAll('.btn__vertical').forEach((button)=>{
         button.addEventListener('click', buttonAction);
     });
+}
+
+function quickActionClick(){
+    const alunos = JSON.parse(window.localStorage.getItem('alunos'));
+
+    if(!alunos || !alunos.length){
+        return notFoundAlunos();
+    }
+
+    handleChangeMenu();
 }
 
 function buttonAction(event){
@@ -107,7 +117,7 @@ function submitAluno(event){
 
     const aluno = {
         nome: nome.value,
-        nota: parseInt(nota.value)
+        nota: parseFloat(nota.value)
     }
     if(alunos){
         alunos.push(aluno);
