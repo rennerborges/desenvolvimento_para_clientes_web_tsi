@@ -113,6 +113,14 @@ function submitAluno(event){
     const nome = document.querySelector('input[name="nome"]');
     const nota = document.querySelector('input[name="nota"]');
 
+    const errorElement = document.querySelector('.error_message');
+
+    if(nota.value < 0 || nota.value > 10){
+        return errorElement.innerHTML = 'A nota precisa ser maior que 0 e menor que 10'
+    }else{
+        errorElement.innerHTML = ''
+    }
+
     let alunos = JSON.parse(window.localStorage.getItem('alunos'));
 
     const aluno = {
