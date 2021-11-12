@@ -28,8 +28,19 @@ function handleChangeCard(preserve){
     }
 }
 
+function toBackTextContent(){
+    const card = document.querySelector('.card');
+    const text = document.querySelector('section > .content__right > h1');
+
+    card.style.display = 'none';
+    text.style.display = 'block';
+}
+
 function InitEvents(){
-    document.querySelector('.icon').addEventListener('click', handleChangeMenu);
+    document.querySelector('.icon').addEventListener('click', ()=> {
+        handleChangeMenu();
+        toBackTextContent();
+    });
     document.querySelector('.btn__action').addEventListener('click', handleChangeMenu);
     document.querySelector('form').addEventListener('submit', submitAluno);
 
@@ -41,6 +52,11 @@ function InitEvents(){
 function buttonAction(event){
     const indexButton = this.querySelector('.btn__index').innerHTML;
     const title = document.querySelector('.card h1');
+    const alunos = JSON.parse(window.localStorage.getItem('alunos'));
+
+    if(!alunos || !alunos.length){
+        return notFoundAlunos();
+    }
 
     const controllerButtons = {
         1: {
@@ -69,7 +85,7 @@ function buttonAction(event){
         },
         7: {
             title: 'Removendo alunos',
-            function: clearAlunos
+            function: clearAlunos,
         }
     }
 
@@ -79,6 +95,7 @@ function buttonAction(event){
     title.innerHTML = actions.title;
     actions.function();
 
+    console.log(alunos);
 }
 
 function submitAluno(event){
@@ -99,13 +116,25 @@ function submitAluno(event){
     }
 
     window.localStorage.setItem('alunos', JSON.stringify(alunos));
+    event.target.reset();
+
+    Toastify({
+        text: "Aluno cadastrado com sucesso!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+    }).showToast();
 }
 
 function getAlunosOrder(order, attribute){
     const containerAlunos = document.querySelector('.containerAlunos');
     const alunos = JSON.parse(window.localStorage.getItem('alunos'));
-    // TODO
-    // Fazer tratamento para quando não houver alunos
+
     const alunosOrdenados = orderByAttribute(alunos, attribute, order);
     containerAlunos.innerHTML = generateAlunoItem(alunosOrdenados);
 }
@@ -197,10 +226,32 @@ function getAlunosByStatus(status){
 }
 
 function clearAlunos(){
+    toBackTextContent();
+    handleChangeMenu();
 
     window.localStorage.removeItem('alunos');
 
-    handleChangeCard();
-    handleChangeMenu();
-    
+    Toastify({
+        text: "Dados limpados com sucesso!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+    }).showToast();
+
+}
+
+function notFoundAlunos(){
+    Toastify({
+        text: "Nenhum aluno cadastrado!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+    }).showToast();
 }
