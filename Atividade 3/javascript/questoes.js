@@ -204,10 +204,17 @@ function getMediaNota(){
     const alunos = JSON.parse(window.localStorage.getItem('alunos'));
 
     const somaNotas = alunos.reduce((sum, aluno)=> sum + aluno.nota, 0);
-
     const media = somaNotas/alunos.length;
 
-    containerAlunos.innerHTML =  `
+    const alunosAprovados = alunos.filter(aluno => aluno.nota >= 6);
+    const somaNotasAprovados = alunosAprovados.reduce((sum, aluno)=> sum + aluno.nota, 0);
+    const mediaAprovados = somaNotasAprovados/alunosAprovados.length;
+
+    const alunosReprovados = alunos.filter(aluno => aluno.nota < 6);
+    const somaNotasReprovados = alunosReprovados.reduce((sum, aluno)=> sum + aluno.nota, 0);
+    const mediaReprovados = somaNotasReprovados/alunosReprovados.length;
+
+    containerAlunos.innerHTML = `
         <div class="aluno__item">
             <div class="line">
                 <p>Média</p>
@@ -217,6 +224,30 @@ function getMediaNota(){
                 <p>${media.toFixed(2)}</p>
             </div>
         </div>
+
+        ${alunosAprovados.length > 0 ?
+            `<div class="aluno__item">
+                <div class="line">
+                    <p>Média aprovados</p>
+                </div>
+                <div class="line">
+                    <p class="label">Valor:</p>
+                    <p>${mediaAprovados.toFixed(2)}</p>
+                </div>
+            </div>` : ''
+        }
+
+        ${alunosReprovados.length > 0 ?
+            `<div class="aluno__item">
+                <div class="line">
+                    <p>Média reprovados</p>
+                </div>
+                <div class="line">
+                    <p class="label">Valor:</p>
+                    <p>${mediaReprovados.toFixed(2)}</p>
+                </div>
+            </div>`: ''
+        }
     `
 }
 
