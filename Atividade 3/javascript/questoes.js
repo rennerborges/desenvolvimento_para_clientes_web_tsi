@@ -19,8 +19,8 @@ function handleChangeCard(preserve){
     const card = document.querySelector('.card');
     const text = document.querySelector('section > .content__right > h1');
 
-    if(card.style.display !== 'block' || preserve){
-        card.style.display = 'block';
+    if(card.style.display !== 'flex' || preserve){
+        card.style.display = 'flex';
         text.style.display = 'none';
     }else{
         card.style.display = 'none';
