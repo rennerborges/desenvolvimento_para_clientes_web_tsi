@@ -77,6 +77,32 @@ label > input:focus {
     outline-color: var(--azul);
 }
 
+label > select {
+    height: 45px;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+    border-color: var(--cinza300);
+    background-color: transparent;
+    color: var(--cinza400);
+    min-width: 250px;
+}
+
+label > select:focus {
+    border-color: var(--azul) !important;
+    color: var(--azul) !important;
+}
+
+label > select:disabled {
+    background-color: var(--cinza200);
+}
+
+label > p {
+    font-size: 0.9rem;
+    color: var(--cinza500);
+    margin-bottom: 7px;
+}
+
 button {
     width: 100%;
     height: 45px;

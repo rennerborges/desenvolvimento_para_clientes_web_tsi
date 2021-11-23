@@ -59,3 +59,16 @@
     left: 8px;
     color: var(--cinza400);
 }
+
+.containerSelect {
+    display: flex;
+    margin-top: 10px;
+}
+
+.containerSelect label {
+    width: auto;
+}
+
+.containerSelect label:first-child {
+    margin-right: 15px;
+}
