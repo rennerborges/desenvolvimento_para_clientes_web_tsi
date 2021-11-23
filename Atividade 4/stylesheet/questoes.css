@@ -16,6 +16,8 @@
     border-radius: 12px;
     padding: 30px;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
 }
 
 #container > h1 {
@@ -28,6 +30,8 @@
     max-height: 100%;
     overflow-y: auto;
     padding-right: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .containerInputs {
@@ -71,4 +75,39 @@
 
 .containerSelect label:first-child {
     margin-right: 15px;
+}
+
+button {
+    background-color: var(--azulClaro);
+    color: var(--azul);
+}
+
+button:hover {
+    background-color: var(--azul);
+    color: #FFF;
+}
+
+button.reset {
+    margin-right: 15px;
+    background-color: var(--vermelhoClaro);
+    color: var(--vermelho);
+}
+
+button.reset:hover{
+    color: #FFF;
+    background-color: var(--vermelho);
+}
+
+.containerButtons {
+    margin-top: 15px;
+    display: flex;
+}
+
+.containerForm {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    padding-right: 7px;
 }

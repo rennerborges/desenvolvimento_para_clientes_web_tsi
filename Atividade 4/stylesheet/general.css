@@ -16,7 +16,12 @@
 
     --azul: #01549D;
     --azulHover: #0C62AD;
-    --azulActive: #004C8F;
+    --azulClaro: #E5F3FF;
+
+
+	--vermelho: #c32222;
+	--vermelhoHover: #D63636;
+	--vermelhoClaro:#FFE5E5;
 
 
     --gradientPrincipal: radial-gradient(circle at 75.75% 5.39%, #3c8efc 0, #00539d 50%, #001e48 100%);
@@ -111,6 +116,7 @@ button {
     cursor: pointer;
     background-color: transparent;
     font-size: 1rem;
+    transition: all 0.1s ease-in;
 }
 
 .label__primary__focus > span {
