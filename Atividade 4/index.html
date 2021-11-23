@@ -12,100 +12,107 @@
     <link rel="stylesheet" type="text/css" href="./javascript/libs/toastify/toastify.min.css">
 </head>
 <body>
-    <section>
-        <form name="cadastro">
-            <label>
-                <span>Nome:</span>
-                <input type="text" minlength="2" maxlength="30" required name="nome" placeholder="Ex: Renner">
-            </label>
-
-            <label>
-                <span>Idade:</span>
-                <input type="number" min="18" max="110" required name="idade" placeholder="Ex: 18">
-            </label>
-
-            <label>
-                <span>Email:</span>
-                <input type="email" required name="email" placeholder="Ex: mail@mail.com">
-            </label>
-
-            <label>
-                <span>Telefone:</span>
-                <input type="tel" required name="telefone" placeholder="Ex: (xx) xxxx-xxxx">
-            </label>
-
-            <div>
-                <h2>Sexo:</h2>
-                <label>
-                    <input type="radio" name="sexo" value="M"/>
-                    <span>Masculino</span>
-                </label>
-
-                <label>
-                    <input type="radio" name="sexo" value="F"/>
-                    <span>Feminino</span>
-                </label>
-
-                <label>
-                    <input type="radio" name="sexo" value="O"/>
-                    <span>Outros</span>
-                </label>
-            </div>
-            
-            <div>
-                <h2>Idiomas falado:</h2>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="portugues"/>
-                    <span>Português</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="ingles"/>
-                    <span>Inglês</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="espanhol"/>
-                    <span>Espanhol</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="frances"/>
-                    <span>Francês</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="russo"/>
-                    <span>Russo</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="hindi"/>
-                    <span>Hindi</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="mandarin"/>
-                    <span>Mandarin Chinês</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="arabe"/>
-                    <span>Árabe padrão</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="bengali"/>
-                    <span>Bengali</span>
-                </label>
-
-                <label>
-                    <input type="checkbox" name="idiomas" value="indonesio"/>
-                    <span>Indonésio</span>
-                </label>
-            </div>
-        </form>  
+    <section id="background">
+        <section id="container">
+            <h1>Cadastro de intercâmbio</h1>
+            <form name="cadastro">
+                <div class="containerInputs">
+                    <label>
+                        <span>Nome:</span>
+                        <input type="text" minlength="2" maxlength="30" required name="nome" placeholder="Ex: Renner">
+                    </label>
+        
+                    <label>
+                        <span>Idade:</span>
+                        <input type="number" min="18" max="110" required name="idade" placeholder="Ex: 18">
+                    </label>
+                </div>
+    
+                <div class="containerInputs">
+                    <label>
+                        <span>Email:</span>
+                        <input type="email" required name="email" placeholder="Ex: mail@mail.com">
+                    </label>
+        
+                    <label>
+                        <span>Telefone:</span>
+                        <input type="tel" required name="telefone" placeholder="Ex: (xx) xxxx-xxxx">
+                    </label>
+                </div>
+    
+                <div class="fieldset">
+                    <h2>Sexo:</h2>
+                    <label>
+                        <input type="radio" name="sexo" value="M"/>
+                        <span>Masculino</span>
+                    </label>
+    
+                    <label>
+                        <input type="radio" name="sexo" value="F"/>
+                        <span>Feminino</span>
+                    </label>
+    
+                    <label>
+                        <input type="radio" name="sexo" value="O"/>
+                        <span>Outros</span>
+                    </label>
+                </div>
+                
+                <div class="fieldset">
+                    <h2>Idiomas falado:</h2>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="portugues"/>
+                        <span>Português</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="ingles"/>
+                        <span>Inglês</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="espanhol"/>
+                        <span>Espanhol</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="frances"/>
+                        <span>Francês</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="russo"/>
+                        <span>Russo</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="hindi"/>
+                        <span>Hindi</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="mandarin"/>
+                        <span>Mandarin Chinês</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="arabe"/>
+                        <span>Árabe padrão</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="bengali"/>
+                        <span>Bengali</span>
+                    </label>
+    
+                    <label>
+                        <input type="checkbox" name="idiomas" value="indonesio"/>
+                        <span>Indonésio</span>
+                    </label>
+                </div>
+            </form>  
+        </section>
     </section>
 
     <script src="./javascript/input.js"></script>

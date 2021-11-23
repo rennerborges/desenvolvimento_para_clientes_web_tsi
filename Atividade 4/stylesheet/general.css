@@ -19,7 +19,7 @@
     --azulActive: #004C8F;
 
 
-    --gradientPrincipal: radial-gradient(circle at 50% -20.71%, #fe8f62 0, #ff8564 8.33%, #ff7967 16.67%, #ff6c6b 25%, #fd5e6e 33.33%, #f84e73 41.67%, #f23c78 50%, #ea287e 58.33%, #e10e86 66.67%, #d6008f 75%, #ca0098 83.33%, #bb00a3 91.67%, #aa00ae 100%);
+    --gradientPrincipal: radial-gradient(circle at 75.75% 5.39%, #3c8efc 0, #00539d 50%, #001e48 100%);
 	--shadow: 0px 5px 26px -5px rgba(107, 129, 148, 0.2);
 
 
@@ -55,7 +55,7 @@ label {
     width: 100%;
 }
 
-label > span {
+label > span:first-child {
     font-size: 0.8rem;
     position: absolute;
     top: -7px;
@@ -65,7 +65,7 @@ label > span {
     color: var(--cinza400);
 }
 
-label > input {
+label > input:not([type='radio'], [type='checkbox']) {
     height: 45px;
     padding: 10px;
     width: 100%;
