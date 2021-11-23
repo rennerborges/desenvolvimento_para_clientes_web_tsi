@@ -111,11 +111,23 @@
                         <span>Indonésio</span>
                     </label>
                 </div>
-            </form>  
+                <label>
+                    <p>Selecione um estado:</p>
+                    <select name="estado" required></select>
+                </label>
+                <label>
+                    <p>Selecione uma cidade:</p>
+                    <select name="cidade" disabled required>
+                        <option disabled selected>Selecione uma cidade</option>
+                    </select>
+                </label>
+
+            </form>
         </section>
     </section>
 
     <script src="./javascript/input.js"></script>
+    <script src="./javascript/dataEstadosCidades.js"></script>
     <script type="text/javascript" src="./javascript/libs/toastify/toastify.js"></script>
     <script src="./javascript/questoes.js"></script>
 </body>
