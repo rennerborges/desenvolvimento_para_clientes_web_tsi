@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento para clientes web</title>
+
+    <link rel="stylesheet" href="./stylesheet/general.css">
+    <link rel="stylesheet" href="./stylesheet/questoes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./javascript/libs/toastify/toastify.min.css">
+</head>
+<body>
+    <section>
+        <form name="cadastro">
+            <label>
+                <span>Nome:</span>
+                <input type="text" minlength="2" maxlength="30" required name="nome" placeholder="Ex: Renner">
+            </label>
+
+            <label>
+                <span>Idade:</span>
+                <input type="number" min="18" max="110" required name="idade" placeholder="Ex: 18">
+            </label>
+
+            <label>
+                <span>Email:</span>
+                <input type="email" required name="email" placeholder="Ex: mail@mail.com">
+            </label>
+
+            <label>
+                <span>Telefone:</span>
+                <input type="tel" required name="telefone" placeholder="Ex: (xx) xxxx-xxxx">
+            </label>
+
+            <div>
+                <h2>Sexo:</h2>
+                <label>
+                    <input type="radio" name="sexo" value="M"/>
+                    <span>Masculino</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="sexo" value="F"/>
+                    <span>Feminino</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="sexo" value="O"/>
+                    <span>Outros</span>
+                </label>
+            </div>
+            
+            <div>
+                <h2>Idiomas falado:</h2>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="portugues"/>
+                    <span>Português</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="ingles"/>
+                    <span>Inglês</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="espanhol"/>
+                    <span>Espanhol</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="frances"/>
+                    <span>Francês</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="russo"/>
+                    <span>Russo</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="hindi"/>
+                    <span>Hindi</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="mandarin"/>
+                    <span>Mandarin Chinês</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="arabe"/>
+                    <span>Árabe padrão</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="bengali"/>
+                    <span>Bengali</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="idiomas" value="indonesio"/>
+                    <span>Indonésio</span>
+                </label>
+            </div>
+        </form>  
+    </section>
+
+    <script src="./javascript/input.js"></script>
+    <script type="text/javascript" src="./javascript/libs/toastify/toastify.js"></script>
+    <script src="./javascript/questoes.js"></script>
+</body>
+</html>
