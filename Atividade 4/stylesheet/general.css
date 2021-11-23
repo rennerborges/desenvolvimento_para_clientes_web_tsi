@@ -70,6 +70,11 @@ label > span:first-child {
     color: var(--cinza400);
 }
 
+label > span:last-child {
+    font-size: 1rem;
+    color: var(--cinza400);
+}
+
 label > input:not([type='radio'], [type='checkbox']) {
     height: 45px;
     padding: 10px;
