@@ -25,14 +25,90 @@ function prepareValuesSelectCidade(siglaEstado){
 
 
 function InitEvents(){
-    document.forms['cadastro'].estado.addEventListener('change', selectEstado);
+    const form = document.forms['cadastro']
+    form.estado.addEventListener('change', selectEstado);
 
+    form.nome.addEventListener('blur', validarNome);
+    form.idade.addEventListener('blur', validarIdade);
+    form.dataNascimento.addEventListener('blur', validarDataNascimento);
+    form.identificacao.addEventListener('blur', validarCPForCNPJ);
 }
 
 function selectEstado(event){
-    const {selectedIndex, options} = event.target;
+    const {selectedIndex} = event.target;
 
     const optionSelecionada = data.estados[selectedIndex-1];
 
     prepareValuesSelectCidade(optionSelecionada.sigla);
 }
+
+function validarInput(input){
+    const {value} = input;
+    console.log('this.classList',)
+    if(!value){
+        input.classList.add('error__input');
+    }else{
+        input.classList.remove('error__input');
+    }
+}
+
+function validarNome(event){
+    const regex = /^([A-Z][a-z]{1,29})$/;
+
+    const input = event.target;
+    const {value} = input;
+
+    if(regex.test(value)){
+        input.classList.remove('error__input');
+    }else{
+        input.classList.add('error__input');
+    }
+
+}
+
+function validarIdade(event){
+    const input = event.target;
+    const {value} = input;
+
+    if(value < 18 || value > 110){
+        input.classList.add('error__input');
+    }else{
+        input.classList.remove('error__input');
+    }
+}
+
+function validarDataNascimento(event){
+    const regex = /^(([1-9]|0[1-9]|[1,2][0-9]|3[0,1])\/([1-9]|1[0,1,2])\/[0-9]{4})$/;
+
+    const input = event.target;
+    const {value} = input;
+
+    if(regex.test(value)){
+        input.classList.remove('error__input');
+    }else{
+        input.classList.add('error__input');
+    }
+}
+
+function validarCPForCNPJ(event){
+    const regex = /^(([1-9]|0[1-9]|[1,2][0-9]|3[0,1])\/([1-9]|1[0,1,2])\/[0-9]{4})$/;
+
+    const input = event.target;
+    const {value} = input;
+
+    if(regex.test(value)){
+        input.classList.remove('error__input');
+    }else{
+        input.classList.add('error__input');
+    }
+}
+
+function validarEmail(event){}
+
+function validarTelefone(event){}
+
+function validarSexo(event){}
+
+function validarIdiomas(event){}
+
+function validarSelect(event){}

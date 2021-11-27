@@ -111,3 +111,7 @@ button.reset:hover{
     max-height: 100%;
     padding-right: 7px;
 }
+
+.error__input {
+    border-color: var(--vermelho) !important;
+}

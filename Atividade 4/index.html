@@ -31,6 +31,18 @@
         
                     <div class="containerInputs">
                         <label>
+                            <span>Data de nascimento:</span>
+                            <input type="text" required name="dataNascimento" placeholder="Ex: 23/10/2001">
+                        </label>
+            
+                        <label>
+                            <span>CPF/CNPJ:</span>
+                            <input type="text" required name="identificacao" placeholder="Ex: 999.999.999-05">
+                        </label>
+                    </div>
+
+                    <div class="containerInputs">
+                        <label>
                             <span>Email:</span>
                             <input type="email" required name="email" placeholder="Ex: mail@mail.com">
                         </label>
@@ -40,7 +52,7 @@
                             <input type="tel" required name="telefone" placeholder="Ex: (xx) xxxx-xxxx">
                         </label>
                     </div>
-        
+
                     <div class="fieldset">
                         <h2>Sexo:</h2>
                         <label>
@@ -137,6 +149,7 @@
     </section>
 
     <script src="./javascript/input.js"></script>
+    <script src="./javascript/util.js"></script>
     <script src="./javascript/dataEstadosCidades.js"></script>
     <script type="text/javascript" src="./javascript/libs/toastify/toastify.js"></script>
     <script src="./javascript/questoes.js"></script>
