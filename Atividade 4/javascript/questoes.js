@@ -31,7 +31,7 @@ function InitEvents(){
     form.nome.addEventListener('blur', validarNome);
     form.idade.addEventListener('blur', validarIdade);
     form.dataNascimento.addEventListener('blur', validarDataNascimento);
-    form.identificacao.addEventListener('blur', validarCPForCNPJ);
+    form.identificacao.addEventListener('blur', validarIdentificacao);
 }
 
 function selectEstado(event){
@@ -90,13 +90,13 @@ function validarDataNascimento(event){
     }
 }
 
-function validarCPForCNPJ(event){
-    const regex = /^(([1-9]|0[1-9]|[1,2][0-9]|3[0,1])\/([1-9]|1[0,1,2])\/[0-9]{4})$/;
-
+function validarIdentificacao(event){
+    const regexCPF = /^([0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2})$/;
+    const regexCNPJ = /^([0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}-[0-9]{2})$/;
     const input = event.target;
     const {value} = input;
 
-    if(regex.test(value)){
+    if((regexCPF.test(value) || regexCNPJ.test(value)) && (isCNPJ(value) || isCPF(value))){
         input.classList.remove('error__input');
     }else{
         input.classList.add('error__input');
