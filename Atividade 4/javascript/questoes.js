@@ -78,7 +78,7 @@ function validarIdade(event){
 }
 
 function validarDataNascimento(event){
-    const regex = /^(([1-9]|0[1-9]|[1,2][0-9]|3[0,1])\/([1-9]|1[0,1,2])\/[0-9]{4})$/;
+    const regex = /^()$/;
 
     const input = event.target;
     const {value} = input;
