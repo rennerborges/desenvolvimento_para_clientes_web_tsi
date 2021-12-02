@@ -32,6 +32,7 @@ function InitEvents(){
     form.idade.addEventListener('blur', validarIdade);
     form.dataNascimento.addEventListener('blur', validarDataNascimento);
     form.identificacao.addEventListener('blur', validarIdentificacao);
+    form.email.addEventListener('blur', validarEmail);
 }
 
 function selectEstado(event){
@@ -44,7 +45,6 @@ function selectEstado(event){
 
 function validarInput(input){
     const {value} = input;
-    console.log('this.classList',)
     if(!value){
         input.classList.add('error__input');
     }else{
@@ -78,7 +78,43 @@ function validarIdade(event){
 }
 
 function validarDataNascimento(event){
-    const regex = /^()$/;
+    const regex = /^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/;
+
+    const input = event.target;
+    const {value} = input;
+
+    if(regex.test(value) && isValidDate(value)){
+        input.classList.remove('error__input');
+    }else{
+        input.classList.add('error__input');
+    }
+}
+
+function isValidDate(date){
+
+    date = date.split('/').reverse().join('-');
+
+    return Boolean(new Date(date).getTime());
+
+}
+
+function validarIdentificacao(event){
+    const regexCPF = /^([0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2})$/;
+    const regexCNPJ = /^([0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}-[0-9]{2})$/;
+    const input = event.target;
+    const {value} = input;
+
+    const valueNotFormmated = value.replace(/[\.\-\/]/g, '');
+
+    if((regexCPF.test(value) || regexCNPJ.test(value)) && (isCNPJ(valueNotFormmated) || isCPF(valueNotFormmated))){
+        input.classList.remove('error__input');
+    }else{
+        input.classList.add('error__input');
+    }
+}
+
+function validarEmail(event){
+    const regex = /^([a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z]{3,}\.(com|biz|me)(\.[A-Za-z]{2})?)$/;
 
     const input = event.target;
     const {value} = input;
@@ -89,21 +125,6 @@ function validarDataNascimento(event){
         input.classList.add('error__input');
     }
 }
-
-function validarIdentificacao(event){
-    const regexCPF = /^([0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2})$/;
-    const regexCNPJ = /^([0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}-[0-9]{2})$/;
-    const input = event.target;
-    const {value} = input;
-
-    if((regexCPF.test(value) || regexCNPJ.test(value)) && (isCNPJ(value) || isCPF(value))){
-        input.classList.remove('error__input');
-    }else{
-        input.classList.add('error__input');
-    }
-}
-
-function validarEmail(event){}
 
 function validarTelefone(event){}
 
