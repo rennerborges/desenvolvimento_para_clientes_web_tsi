@@ -36,6 +36,8 @@ function InitEvents(){
     form.telefone.addEventListener('blur', validarTelefone);
     form.estado.addEventListener('blur', validarSelect);
     form.cidade.addEventListener('blur', validarSelect);
+
+    form.addEventListener('submit', submit);
 }
 
 function selectEstado(event){
@@ -49,39 +51,51 @@ function selectEstado(event){
 function validarNome(event){
     const regex = /^([A-Z][a-z]{1,29})$/;
 
-    const input = event.target;
+    const input = event.target || event;
     const {value} = input;
 
-    if(regex.test(value)){
+    const condition = regex.test(value);
+
+    if(condition){
         removeError(input);
     }else{
         setError(input);
     }
+
+    return condition;
 
 }
 
 function validarIdade(event){
-    const input = event.target;
+    const input = event.target || event;
     const {value} = input;
 
-    if(value < 18 || value > 110){
+    const condition = value < 18 || value > 110;
+
+    if(condition){
         setError(input);
     }else{
         removeError(input);
     }
+
+    return !condition;
 }
 
 function validarDataNascimento(event){
     const regex = /^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/;
 
-    const input = event.target;
+    const input = event.target || event;
     const {value} = input;
 
-    if(regex.test(value) && isValidDate(value)){
+    const condition = regex.test(value) && isValidDate(value);
+
+    if(condition){
         removeError(input);
     }else{
         setError(input);
     }
+
+    return condition;
 }
 
 function isValidDate(date){
@@ -100,11 +114,15 @@ function validarIdentificacao(event){
 
     const valueNotFormmated = value.replace(/[\.\-\/]/g, '');
 
-    if((regexCPF.test(value) || regexCNPJ.test(value)) && (isCNPJ(valueNotFormmated) || isCPF(valueNotFormmated))){
+    const condition = (regexCPF.test(value) || regexCNPJ.test(value)) && (isCNPJ(valueNotFormmated) || isCPF(valueNotFormmated));
+
+    if(condition){
         removeError(input);
     }else{
         setError(input);
     }
+
+    return condition;
 }
 
 function validarEmail(event){
@@ -113,11 +131,15 @@ function validarEmail(event){
     const input = event.target || event;
     const {value} = input;
 
-    if(regex.test(value)){
+    const condition =  regex.test(value);
+
+    if(condition){
         removeError(input);
     }else{
         setError(input);
     }
+
+    return condition;
 }
 
 function validarTelefone(event){
@@ -126,11 +148,15 @@ function validarTelefone(event){
     const input = event.target || event;
     const {value} = input;
 
-    if(regex.test(value)){
+    const condition =  regex.test(value);
+
+    if(condition){
         removeError(input);
     }else{
         setError(input);
     }
+    
+    return condition;
 }
 
 function validarSexo(){
@@ -147,22 +173,28 @@ function validarSexo(){
     }else{
         setError(fieldset);
     }
+
+    return checked;
 }
 
 function validarIdiomas(){
     const form = document.forms['cadastro'];
 
     const [...checkboxs] = form.idiomas;
-    
+
     const checkeds = checkboxs.filter(checkbox => checkbox.checked);
 
     const fieldset = document.getElementById("idiomas");
-    
-    if(checkeds < 2){
-        removeError(fieldset);
-    }else{
+
+    const condition = checkeds.length <= 2;
+
+    if(condition){
         setError(fieldset);
+    }else{
+        removeError(fieldset);
     }
+
+    return !condition;
 }
 
 function validarSelect(event){
@@ -174,6 +206,8 @@ function validarSelect(event){
     }else{
         setError(select)
     }
+
+    return selectedIndex;
 }
 
 function setError(element){
@@ -181,5 +215,61 @@ function setError(element){
 }
 
 function removeError(element){
-    element.classList.add('error__input');
+    element.classList.remove('error__input');
+}
+
+function submit(event){
+    const form = document.forms['cadastro'];
+
+    const validacoes = {
+        nome: {
+            input: form.nome,
+            function: validarNome,
+        },
+        idade: {
+            input: form.idade,
+            function: validarIdade,
+        },
+        dataNascimento: {
+            input: form.dataNascimento,
+            function: validarDataNascimento,
+        },
+        identificacao: {
+            input: form.identificacao,
+            function: validarIdentificacao,
+        },
+        email: {
+            input: form.email,
+            function: validarEmail,
+        },
+        telefone: {
+            input: form.telefone,
+            function: validarTelefone,
+        },
+        sexo: {
+            function: validarSexo,
+        },
+        idiomas: {
+            function: validarIdiomas
+        },
+        estado: {
+            input: form.estado,
+            function: validarSelect,
+        },
+        cidade: {
+            input: form.cidade,
+            function: validarSelect,
+        }
+    }
+
+    for(const inputName in validacoes){
+
+        const element = validacoes[inputName];
+        
+        
+        if(!element.function(element.input)){
+            console.log(inputName)
+            event.preventDefault();
+        }
+    }
 }
