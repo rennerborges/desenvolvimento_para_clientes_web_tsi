@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+}
+
+form {
+    height: 100vh;
+    width: 50vw;
+    max-width: 600px;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+form > h1 {
+    font-size: 1.8rem;
+}
+
+form > h2 {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+
+input {
+    width: 100%;
+}
+
+label {
+    margin-top: 15px;
+}
+
+label > p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+input {
+    border: 1px solid #4838E5;
+    height: 45px;
+    border-radius: 30px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    height: 45px;
+    background-color: #4838E5;
+    color: white;
+    border-radius: 30px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#contentImg {
+    flex: 1;
+    height: 100vh;
+    background: linear-gradient(240deg,rgba(144, 127, 244, 0.6) 35%, rgba(53, 33, 182, 0.9)), url('https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+#contentImg h1 {
+    color: white;
+    font-size: 3rem;
+    margin-top: 50px;
+}
+
+#contentImg h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
