@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --black: #303a42;
+  --azul: #01549d;
+  --azulClaro: #e5f3ff;
+  --azulClaroHover: #f5faff;
+  --azulHover: #0c62ad;
+  --azulActive: #004c8f;
+  --cinza: #e0e6eb;
+  --cinzaHover: #f3f5f7;
+  --cinzaPrimarioTexto: #5a6c7c;
+  --cinzaSecundarioTexto: #6b8194;
+  --borderRadius: 12px;
+  --backgroundDark: linear-gradient(
+    262.43deg,
+    rgba(200, 214, 226, 0.26) 0%,
+    rgba(200, 214, 226, 0.05) 49.53%,
+    rgba(200, 214, 226, 0.26) 100%
+  );
+  --boxShadow: 0px 6px 20px rgba(153, 155, 168, 0.15);
+  --font-size-title: 1.25rem;
+  --font-size-subtitle: 2.125rem;
+  --font-size-text: 1rem;
+
+  --cinza200: #e7e7e9;
+  --cinza300: #ccd6de;
+  --cinza400: #6b8194;
+  --cinza500: #5a6c7c;
+
+  --vermelhoHover: #ffe5e5;
+  --vermelho: #c32222;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: #eff3f6;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #97a7b4;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+* {
+  font-family: 'Inter', sans-serif !important;
+  box-sizing: border-box;
+}

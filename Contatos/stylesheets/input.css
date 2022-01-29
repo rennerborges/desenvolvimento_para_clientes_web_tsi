@@ -1,0 +1,32 @@
+label {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+}
+
+label > span {
+  font-size: 0.8rem;
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  background-color: #fff;
+  padding: 0px 5px;
+  color: var(--cinza400);
+}
+
+label > input {
+  height: 45px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--cinza300);
+}
+
+label > input:focus {
+  outline-color: var(--azul);
+}
+
+.label__primary__focus > span {
+  color: var(--azul);
+}

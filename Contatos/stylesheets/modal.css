@@ -1,0 +1,75 @@
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+}
+
+.modal {
+  height: auto;
+  min-height: 300px;
+  width: 500px;
+  background-color: white;
+  box-shadow: var(--boxShadow);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.modal > .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--black);
+}
+
+.modal > .header h1 {
+  color: var(--black);
+  margin: 0px;
+}
+
+.label__primary {
+  margin-top: 20px;
+}
+
+.modal .containerButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal .containerButtons button {
+  height: 45px;
+  width: calc(50% - 5px);
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal .containerButtons button:first-child {
+  background-color: var(--vermelhoHover);
+  color: var(--vermelho);
+}
+
+.modal .containerButtons button:first-child:hover {
+  background-color: var(--vermelho);
+  color: white;
+}
+
+.modal .containerButtons button:last-child {
+  background-color: var(--azulClaro);
+  color: var(--azul);
+}
+
+.modal .containerButtons button:last-child:hover {
+  background-color: var(--azul);
+  color: white;
+}
+
+.error__input {
+  border-color: var(--vermelho) !important;
+}

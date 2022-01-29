@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatos | Home</title>
+
+  <meta name="author" content="Renner Borges">
+  <meta name="description" content="Sistema para contatos pessoais">
+  <meta name="keywords" content="pessoas, contato, agenda">
+
+  <meta http-equiv="content-language" content="pt-br">
+
+  <meta name="theme-color" content="#01549d" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#01549d" />
+  <meta name="msapplication-navbutton-color" content="#01549d" />
+
+  <link rel="stylesheet" href="./stylesheets/general.css">
+  <link rel="stylesheet" href="./stylesheets/reset.css">
+  <link rel="stylesheet" href="./stylesheets/home.css">
+  <link rel="stylesheet" href="./stylesheets/modal.css">
+  <link rel="stylesheet" href="./stylesheets/input.css">
+  <link rel="stylesheet" href="./stylesheets/util/preloader.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link rel="shortcut icon" href="./image/contactLogo.png" type="image/x-icon" />
+</head>
+<body>
+  
+  <header>
+    <div class="flex-row">
+      <img src="./image/contactLogo.png" alt="Imagem de contato">
+      <h1>Contatos</h1>
+    </div>
+
+    <button class="btn-criarContato">
+      <i class="icon-button fas fa-plus"></i>
+      Criar contato
+    </button>
+  </header>
+
+  <section class="container">
+
+    <section class="banner">
+      <img src="./image/banner.svg" alt="Banner">
+      <div class="content">
+          <h1>
+            Seus 
+            <span class="typewrite" data-period="2000" data-type='["contatos", "momentos", "amigos"]'>
+              <span class="wrap"></span>
+            </span>
+          </h1>
+          <h2>Marque a diversão de hoje com a gente! 😜</h2>
+      </div>
+    </section>
+
+    <section class="navigation">
+      <h1>Seus contatos</h1>
+    </section>
+
+    <table id="tableUsuarios">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th></th>
+        </tr>
+      </thead>
+      
+  
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Gisele+Santos" alt="Avatar do Renner Borges">
+            Gisele Santos
+          </div>
+        </td>
+        <td>gisele@gmail.com</td>
+        <td>(64) 99999-9999</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="container__nome">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=random&name=Renner+Borges" alt="Avatar do Renner Borges">
+            Renner Borges
+          </div>
+        </td>
+        <td>rennerferreira23@gmail.com</td>
+        <td>(64) 99295-4946</td>
+        <td>
+          <i class="icon fas fa-user-edit"></i>
+  
+          <i class="icon fas fa-trash"></i>
+        </td>
+      </tr>
+
+    </table>
+  </section>
+
+  <section class="backdrop">
+    <section class="modal">
+      <div class="header">
+        <h1 class="titleModal">Criar contato</h1>
+        <i class="icon closeModal fas fa-times"></i>
+      </div>
+
+      <form>
+        
+        <label class="label__primary">
+          <span>Nome:</span>
+          <input type="text" name="nome" required placeholder="Ex.: João Silva">
+        </label>
+
+        <label class="label__primary">
+          <span>E-mail:</span>
+          <input type="email" name="email" required placeholder="Ex.: joaosilva@teste.com">
+        </label>
+
+        <label class="label__primary">
+          <span>Telelefone:</span>
+          <input type="tel" name="telefone" required placeholder="Ex.: (99) 99999-9999">
+        </label>
+
+        <div class="containerButtons">
+          <button class="closeModal">Cancelar</button>
+          <button>Salvar</button>
+        </div>
+
+      </form>
+    </section>
+  </section>
+
+  <section id="preloader">
+
+    <svg class="pl" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
+          <stop offset="0%" stop-color="#66b8ff" />
+          <stop offset="100%" stop-color="#01549d" />
+        </linearGradient>
+        <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#66b8ff" />
+          <stop offset="100%" stop-color="#01549d" />
+        </linearGradient>
+      </defs>
+      <circle class="pl__ring" cx="100" cy="100" r="82" fill="none" stroke="url(#pl-grad1)" stroke-width="36" stroke-dasharray="0 257 1 257" stroke-dashoffset="0.01" stroke-linecap="round" transform="rotate(-90,100,100)" />
+      <line class="pl__ball" stroke="url(#pl-grad2)" x1="100" y1="18" x2="100.01" y2="182" stroke-width="36" stroke-dasharray="1 165" stroke-linecap="round" />
+    </svg>
+
+    <h1>Aguarde um momento</h1>
+
+  </section>
+
+  <section id="flash">
+    <img src="./image/contactLogo.png" alt="Imagem de contato">
+    <h1>Contatos</h1>
+
+    <p class="direitosReservados">&copy; 2022 Renner Borges. Todos os direitos reservados.</p>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <script src="./javascript/lib/Typerwriter.js"></script>
+  <script src="./javascript/input.js"></script>
+  <script src="./javascript/ajax.js"></script>
+  <script src="./javascript/index.js"></script>
+</body>
+</html>
