@@ -1,15 +1,25 @@
-const baseUrl = 'http://68.232.175.10:8080';
-
-function Ajax(url, method, body){
-  let fetchData = {
+function Ajax(url, method, body) {
+  const fetchData = {
     method: method,
-    headers: new Headers()
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  };
+
+  if (body) {
+    fetchData.body = JSON.stringify(body);
   }
 
-  if(body){
-    fetchData.body = body;
-  }
+  return fetch(url, fetchData)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+      }
 
-
-  return fetch(url, fetchData);
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
 }

@@ -1,40 +1,37 @@
-
-  
-window.addEventListener('load',()=> {
+window.addEventListener('load', () => {
   setEventFocusAndBlurInputs();
 });
 
-function setEventFocusAndBlurInputs(){
+function setEventFocusAndBlurInputs() {
   const input = getAllInput();
 
-  input.forEach((input)=> {
-      input.addEventListener('blur', handleChangeLabelColorInput);
-      input.addEventListener('focus', handleChangeLabelColorInput);
+  input.forEach((input) => {
+    input.addEventListener('blur', handleChangeLabelColorInput);
+    input.addEventListener('focus', handleChangeLabelColorInput);
   });
 }
 
-function handleChangeLabelColorInput (event){
+function handleChangeLabelColorInput(event) {
   const label = event.target.parentNode;
   const classNameLabel = label.getAttribute('class');
 
   switch (event.type) {
-      case 'focus':
+    case 'focus':
+      const classNameLabelFocus = `${classNameLabel}__focus`;
+      label.classNameFocus = classNameLabelFocus;
+      label.classList.add(classNameLabelFocus);
 
-          const classNameLabelFocus = `${classNameLabel}__focus`;
-          label.classNameFocus = classNameLabelFocus;
-          label.classList.add(classNameLabelFocus);
+      break;
 
-          break;
-
-      default:
-          if(label.classNameFocus){
-              label.classList.remove(label.classNameFocus);
-          }
-          break;
+    default:
+      if (label.classNameFocus) {
+        label.classList.remove(label.classNameFocus);
+      }
+      break;
   }
 }
 
-function getAllInput(){
+function getAllInput() {
   const [...inputs] = document.querySelectorAll('input');
   return inputs;
 }

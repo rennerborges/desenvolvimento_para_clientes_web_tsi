@@ -172,8 +172,8 @@ header button .icon-button {
   backdrop-filter: blur(4px);
 
   animation-duration: 1s;
-  animation-name: fadeout;
-  animation-delay: 2s;
+  /* animation-name: fadeout; */
+  /* animation-delay: 2s; */
   animation-fill-mode: forwards;
 }
 
@@ -207,6 +207,22 @@ header button .icon-button {
   bottom: 50%;
   left: 15px;
   margin: auto;
+}
+
+.search .icon-close-search {
+  color: var(--cinza400);
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 15px;
+  margin: auto;
+  display: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.search .icon-close-search:hover {
+  color: var(--azul);
 }
 
 .search input {
@@ -246,7 +262,7 @@ header button .icon-button {
 #notfound h1 {
   font-size: 1rem;
   color: var(--black);
-  margin-top: 20px;
+  margin: 20px 0px 40px;
 }
 
 footer {
@@ -256,6 +272,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   border-top: 2px solid var(--azul);
+  margin-top: 50px;
 }
 
 footer a {
