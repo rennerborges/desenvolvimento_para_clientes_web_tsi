@@ -9,12 +9,6 @@ const notyf = new Notyf({
   },
 });
 
-setTimeout(() => {
-  const flash = document.querySelector('#flash');
-  flash.style.display = 'none';
-  reloadScrollBars();
-}, 3000);
-
 document.addEventListener('scroll', function () {
   const posicaoy = window.pageYOffset;
   const header = document.querySelector('body > section > header');
@@ -265,6 +259,11 @@ async function getUsuarios() {
       const flash = document.querySelector('#flash');
 
       flash.style.animationName = 'fadeout';
+
+      setTimeout(() => {
+        flash.style.display = 'none';
+        reloadScrollBars();
+      }, 1000);
     } else {
       handleChangePreloader(false);
     }
